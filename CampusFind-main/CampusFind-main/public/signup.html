@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a CampusFind account before submitting a lost-item report.">
+  <title>Create account | CampusFind</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/logo-fixes.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="identity-wrap">
+      <a class="official-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/uofr-logo.jpg"
+          alt="University of Regina logo"
+          class="uofr-logo"
+        >
+      </a>
+
+      <a class="campusfind-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/campusfind-logo.svg"
+          alt=""
+          aria-hidden="true"
+          class="campusfind-icon"
+        >
+        <div>
+          <h1>CampusFind</h1>
+          <p class="brand-subtitle">A safer lost and found experience for the University of Regina community</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <a href="/admin-login.html" class="admin-link">Admin Login</a>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Switch to dark mode"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="shell auth-shell">
+      <div class="card section-card auth-card narrow-card">
+        <p class="eyebrow">Create account</p>
+        <h2>Sign up for CampusFind</h2>
+        <p>Create an account before submitting a lost-item report.</p>
+
+        <form
+          class="form-grid auth-panel single-panel"
+          id="signup-form"
+          enctype="multipart/form-data"
+        >
+          <label>
+            <span>Full name</span>
+            <input
+              type="text"
+              name="fullName"
+              minlength="2"
+              maxlength="120"
+              autocomplete="name"
+              required
+            >
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+
+          <label>
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              minlength="8"
+              autocomplete="new-password"
+              required
+            >
+          </label>
+
+          <label>
+            <span>Phone number</span>
+            <input
+              type="tel"
+              name="phone"
+              minlength="10"
+              placeholder="306-000-0000"
+              autocomplete="tel"
+              required
+            >
+          </label>
+
+          <label>
+            <span>University or provincial ID</span>
+            <input
+              type="file"
+              name="file"
+              accept=".jpg,.jpeg,.png,.pdf"
+            >
+          </label>
+
+          <p class="form-hint">
+            Upload a clear image of your University or provincial ID. Maximum
+            file size is 5 MB.
+          </p>
+
+          <button class="btn btn-secondary full" type="submit">
+            Create account
+          </button>
+
+          <p class="switch-auth">
+            Already registered? <a href="/login.html">Log in</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand">
+      <img
+        src="/assets/images/protectiveservice-logo.png"
+        alt="University of Regina Protective Services logo"
+        class="ps-logo"
+      >
+      <div>
+        <h3>CampusFind</h3>
+        <p>Protective Services</p>
+        <p>306-585-4407 · 306-585-4999</p>
+        <p>Research and Innovation Centre, Room 120</p>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p><a href="/">Return to homepage</a></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/auth.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: campusfind
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: PGSSLMODE
+        value: require
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: EMAIL_NOTIFICATIONS_ENABLED
+        value: 'true'
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_REPLY_TO
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: MATCH_EMAIL_THRESHOLD
+        value: '58'

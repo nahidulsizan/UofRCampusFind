@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage CampusFind found items, matches, and release records.">
+  <title>Admin dashboard | CampusFind</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/logo-fixes.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="identity-wrap">
+      <a class="official-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/uofr-logo.jpg"
+          alt="University of Regina logo"
+          class="uofr-logo"
+        >
+      </a>
+
+      <a class="campusfind-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/campusfind-logo.svg"
+          alt=""
+          aria-hidden="true"
+          class="campusfind-icon"
+        >
+        <div>
+          <h1>CampusFind</h1>
+          <p class="brand-subtitle">Admin dashboard</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <a class="admin-link" href="#" id="admin-signout">Sign out</a>
+      <div class="contact-pill">
+        Signed in: <span id="admin-name">Admin</span>
+      </div>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Switch to dark mode"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="shell admin-preview-wrap">
+      <div class="card section-card admin-preview">
+        <p class="eyebrow">Protected area</p>
+        <h2>Admin portal</h2>
+        <p>Manage found items, review proposed matches, and record releases.</p>
+
+        <div class="dashboard-main">
+          <div class="metric-row">
+            <div class="metric-card">
+              <span>Items in holding</span>
+              <strong id="metric-holding">–</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>Open lost reports</span>
+              <strong id="metric-open">–</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>Matches pending review</span>
+              <strong id="metric-matches">–</strong>
+            </div>
+          </div>
+
+          <div class="dashboard-panels">
+            <div class="panel">
+              <div class="section-heading-row">
+                <div>
+                  <p class="eyebrow">Intake</p>
+                  <h3>Add found item</h3>
+                </div>
+                <span>Staff entry only</span>
+              </div>
+
+              <form class="form-grid small-form" id="found-item-form">
+                <label>
+                  <span>Item title</span>
+                  <input
+                    type="text"
+                    name="itemTitle"
+                    minlength="2"
+                    maxlength="160"
+                    placeholder="Blue backpack"
+                    required
+                  >
+                </label>
+
+                <div class="field-grid two-col">
+                  <label>
+                    <span>Category</span>
+                    <select name="itemCategory" required>
+                      <option value="">Select a category</option>
+                      <option>Phone</option>
+                      <option>Laptop / electronic device</option>
+                      <option>Wallet / ID / bank card</option>
+                      <option>Backpack / bag</option>
+                      <option>Book / notebook</option>
+                      <option>Keys</option>
+                      <option>Jewelry</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Date found</span>
+                    <input type="date" name="dateFound" required>
+                  </label>
+                </div>
+
+                <label>
+                  <span>Where it was found</span>
+                  <input
+                    type="text"
+                    name="foundLocation"
+                    minlength="2"
+                    maxlength="200"
+                    placeholder="Riddell Centre food court"
+                    required
+                  >
+                </label>
+
+                <label>
+                  <span>Drop-off location</span>
+                  <input
+                    type="text"
+                    name="dropOffLocation"
+                    minlength="2"
+                    maxlength="200"
+                    value="Research and Innovation Centre, Room 120"
+                    required
+                  >
+                </label>
+
+                <label>
+                  <span>Private verification notes</span>
+                  <textarea
+                    name="privateVerificationNotes"
+                    rows="4"
+                    maxlength="2000"
+                    placeholder="Serial number, name on card, unique marks... Only staff should see this."
+                  ></textarea>
+                </label>
+
+                <button class="btn btn-primary full" type="submit">
+                  Save item and search for matches
+                </button>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="section-heading-row">
+                <div>
+                  <p class="eyebrow">Review</p>
+                  <h3>Recent match queue</h3>
+                </div>
+                <span>Highest scores first</span>
+              </div>
+
+              <div class="match-list" id="match-list">Loading...</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="section-heading-row">
+              <div>
+                <p class="eyebrow">Audit history</p>
+                <h3>Release log</h3>
+              </div>
+              <span>Last 7 days</span>
+            </div>
+
+            <div class="match-list" id="release-list">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand">
+      <img
+        src="/assets/images/protectiveservice-logo.png"
+        alt="University of Regina Protective Services logo"
+        class="ps-logo"
+      >
+      <div>
+        <h3>CampusFind</h3>
+        <p>Protective Services</p>
+        <p>306-585-4407 · 306-585-4999</p>
+        <p>Research and Innovation Centre, Room 120</p>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p>Designed as a safer lost-and-found workflow concept for the University of Regina community.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/admin.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* CampusFind local logo placement
+   Keep the corresponding image files in:
+   public/assets/images/uofr-logo.jpg
+   public/assets/images/protectiveservice-logo.png
+*/
+
+.official-brand-top {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 1rem auto 0.65rem;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 0;
+}
+
+.official-brand-top a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.official-brand-top .uofr-logo {
+  width: clamp(180px, 24vw, 285px);
+  height: auto;
+  max-height: 92px;
+  object-fit: contain;
+}
+
+.site-footer .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer .ps-logo {
+  width: clamp(115px, 16vw, 175px);
+  height: auto;
+  max-height: 78px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  background: #ffffff;
+  padding: 0.35rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  .official-brand-top {
+    justify-content: center;
+  }
+
+  .site-footer .footer-brand {
+    align-items: flex-start;
+  }
+
+  .site-footer .ps-logo {
+    width: 120px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-footer .footer-brand {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit and track a CampusFind lost-item report.">
+  <title>Report a lost item | CampusFind</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/logo-fixes.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="identity-wrap">
+      <a class="official-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/uofr-logo.jpg"
+          alt="University of Regina logo"
+          class="uofr-logo"
+        >
+      </a>
+
+      <a class="campusfind-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/campusfind-logo.svg"
+          alt=""
+          aria-hidden="true"
+          class="campusfind-icon"
+        >
+        <div>
+          <h1>CampusFind</h1>
+          <p class="brand-subtitle">Public user portal</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <a class="admin-link" href="#" id="user-signout">Sign out</a>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Switch to dark mode"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="shell section-grid">
+      <div class="card section-card">
+        <div class="user-strip">
+          <p>Signed in as <strong id="signed-in-user">User</strong></p>
+          <span>Public account</span>
+        </div>
+
+        <p class="eyebrow">Lost-item report</p>
+        <h2>Submit your report</h2>
+
+        <form
+          class="form-grid"
+          id="report-form"
+          enctype="multipart/form-data"
+        >
+          <div class="field-grid two-col">
+            <label>
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                readonly
+                required
+              >
+            </label>
+
+            <label>
+              <span>Phone number</span>
+              <input
+                type="tel"
+                name="phone"
+                minlength="10"
+                autocomplete="tel"
+                required
+              >
+            </label>
+          </div>
+
+          <div class="field-grid two-col">
+            <label>
+              <span>Item category</span>
+              <select name="itemCategory" required>
+                <option value="">Select a category</option>
+                <option>Phone</option>
+                <option>Laptop / electronic device</option>
+                <option>Wallet / ID / bank card</option>
+                <option>Backpack / bag</option>
+                <option>Book / notebook</option>
+                <option>Keys</option>
+                <option>Jewelry</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Item name</span>
+              <input
+                type="text"
+                name="itemName"
+                minlength="2"
+                maxlength="160"
+                placeholder="Black iPhone 14"
+                required
+              >
+            </label>
+          </div>
+
+          <div class="field-grid two-col">
+            <label>
+              <span>Date lost</span>
+              <input type="date" name="dateLost" required>
+            </label>
+
+            <label>
+              <span>Last known location</span>
+              <input
+                type="text"
+                name="lastKnownLocation"
+                minlength="2"
+                maxlength="200"
+                placeholder="Library, Riddell Centre..."
+                required
+              >
+            </label>
+          </div>
+
+          <label>
+            <span>Photo of the item (optional)</span>
+            <input
+              type="file"
+              name="file"
+              accept=".jpg,.jpeg,.png,.pdf"
+            >
+          </label>
+
+          <p class="form-hint">
+            Maximum 5 MB. Upload only information needed to identify the item.
+          </p>
+
+          <label>
+            <span>Description</span>
+            <textarea
+              name="description"
+              rows="5"
+              minlength="10"
+              maxlength="2000"
+              placeholder="Colour, brand, case, marks, stickers, or other identifying details."
+              required
+            ></textarea>
+          </label>
+
+          <div class="inline-note">
+            Private verification details are reviewed by authorized staff before
+            an item is released.
+          </div>
+
+          <button class="btn btn-primary full" type="submit">
+            Submit lost-item report
+          </button>
+        </form>
+      </div>
+
+      <aside class="stack-col">
+        <div class="card section-card">
+          <p class="eyebrow">Claim status</p>
+          <h2>Check a request</h2>
+
+          <form class="form-grid" id="status-form">
+            <label>
+              <span>Reference number</span>
+              <input
+                type="text"
+                name="referenceNumber"
+                pattern="CF-[0-9]{4}-[0-9]{4}"
+                placeholder="CF-9999-1234"
+                required
+              >
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="statusEmail" required>
+            </label>
+
+            <button class="btn btn-secondary full" type="submit">
+              Check status
+            </button>
+          </form>
+
+          <div
+            class="status-result"
+            id="status-result"
+            aria-live="polite"
+          >
+            Enter your reference number and email.
+          </div>
+        </div>
+
+        <div class="card section-card">
+          <p class="eyebrow">Your reports</p>
+          <h2>Recent submissions</h2>
+          <div class="match-list" id="my-reports-list">Loading...</div>
+        </div>
+
+        <div class="card section-card">
+          <p class="eyebrow">Support</p>
+          <h2>Need help?</h2>
+          <div class="support-box">
+            <p>General inquiries: <strong>306-585-4407</strong></p>
+            <p>Emergency: call <strong>911</strong> first.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand">
+      <img
+        src="/assets/images/protectiveservice-logo.png"
+        alt="University of Regina Protective Services logo"
+        class="ps-logo"
+      >
+      <div>
+        <h3>CampusFind</h3>
+        <p>Protective Services</p>
+        <p>306-585-4407 · 306-585-4999</p>
+        <p>Research and Innovation Centre, Room 120</p>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p>Designed as a safer lost-and-found workflow concept for the University of Regina community.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/report.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Authorized CampusFind administrator login.">
+  <title>Admin login | CampusFind</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/logo-fixes.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="identity-wrap">
+      <a class="official-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/uofr-logo.jpg"
+          alt="University of Regina logo"
+          class="uofr-logo"
+        >
+      </a>
+
+      <a class="campusfind-brand" href="/" aria-label="CampusFind homepage">
+        <img
+          src="/assets/images/campusfind-logo.svg"
+          alt=""
+          aria-hidden="true"
+          class="campusfind-icon"
+        >
+        <div>
+          <h1>CampusFind</h1>
+          <p class="brand-subtitle">Protective Services portal</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <a class="admin-link" href="/">Return to public site</a>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Switch to dark mode"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="shell admin-shell">
+      <div class="card admin-card">
+        <p class="eyebrow">Authorized staff only</p>
+        <h2>Admin login</h2>
+        <p>
+          Administrator accounts are created internally through the secure
+          server-side admin script.
+        </p>
+
+        <div class="admin-grid admin-top-grid">
+          <form
+            class="form-grid auth-panel admin-login-panel"
+            id="admin-login-form"
+          >
+            <h3>Sign in</h3>
+
+            <label>
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="staff@uregina.ca"
+                autocomplete="username"
+                required
+              >
+            </label>
+
+            <label>
+              <span>Password</span>
+              <input
+                type="password"
+                name="password"
+                minlength="8"
+                autocomplete="current-password"
+                required
+              >
+            </label>
+
+            <button class="btn btn-secondary full" type="submit">
+              Admin log in
+            </button>
+
+            <div class="inline-note">
+              Public signup can never create an administrator account.
+            </div>
+          </form>
+
+          <article class="admin-feature">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Record delivered items</h3>
+            <p>
+              Staff enter an item only after it has been physically received.
+            </p>
+          </article>
+
+          <article class="admin-feature">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Protect private details</h3>
+            <p>
+              Verification notes remain restricted to authorized staff.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand">
+      <img
+        src="/assets/images/protectiveservice-logo.png"
+        alt="University of Regina Protective Services logo"
+        class="ps-logo"
+      >
+      <div>
+        <h3>CampusFind</h3>
+        <p>Protective Services</p>
+        <p>306-585-4407 · 306-585-4999</p>
+        <p>Research and Innovation Centre, Room 120</p>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p>Designed as a safer lost-and-found workflow concept for the University of Regina community.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/auth.js" type="module"></script>
+</body>
+</html>
