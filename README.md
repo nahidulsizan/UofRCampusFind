@@ -7,7 +7,6 @@
 ## Live Project
 
 - **Website:** https://campusfind-zitd.onrender.com
-- **GitHub repository:** https://github.com/lelele112358/CampusFind
 - **Health check:** https://campusfind-zitd.onrender.com/api/health
 
 The free Render service may take approximately 30–60 seconds to wake after a period of inactivity.
@@ -549,10 +548,11 @@ Developed by the **CampusFind CS 476 project team** at the University of Regina.
 
 Add team-member names here before submission:
 
-- Team member 1
-- Team member 2
-- Team member 3
-- Team member 4
+- Nahidul Islam Sizan ( Team Lead )
+- Ammara Junaid
+- Drashti Patel
+- Habibullah Rafi
+- Bui Xuan Tuyet Son
 
 ---
 
