@@ -554,6 +554,3 @@ Add team-member names here before submission:
 - Habibullah Rafi
 - Bui Xuan Tuyet Son
 
----
-
-**Last updated:** July 2026
